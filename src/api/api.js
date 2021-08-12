@@ -2,12 +2,12 @@
  * @Description: 默认注释
  * @Author: huangxin
  * @Date: 2021-06-10 11:09:54
- * @LastEditTime: 2021-08-06 10:23:42
+ * @LastEditTime: 2021-08-11 15:14:17
  */
 import axios from 'axios';
 import { Message } from 'element-ui'
+import _this from '../main'
 let base = 'http://bi.zydp.net';
-let _this = this
 axios.interceptors.response.use(
 	(response) => {
 		if (response.data.code == '403') {
@@ -32,6 +32,8 @@ axios.interceptors.response.use(
 					message: "登录过期,请重新登录",
 					type: "error"
 				});
+				localStorage.removeItem("user");
+				localStorage.removeItem("router");
 				_this.$router.push("/login");
 		}
 	}
@@ -45,7 +47,6 @@ if (user) {
 	});
 }
 export const requestLogin = params => { return axios.post(`${base}/login`, params).then(res => res.data) };
-
 export const getMenuList = params => { return axios.get(`${base}/menu/`, params).then(res => res.data) };
 export const getApiMenuId = params => { return axios.get(`${base}/api/${params}`).then(res => res.data) };
 export const getCharData = params => {

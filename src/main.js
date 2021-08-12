@@ -2,7 +2,7 @@
  * @Description: 默认注释
  * @Author: huangxin
  * @Date: 2021-08-04 14:47:34
- * @LastEditTime: 2021-08-05 18:01:28
+ * @LastEditTime: 2021-08-11 14:33:27
  */
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
@@ -24,9 +24,11 @@ Vue.prototype.$echarts = echarts
 
 
 /* eslint-disable no-new */
-new Vue({
+var vue = new Vue({
 	el: '#app',
 	router,
 	components: { App },
 	template: '<App/>'
 })
+
+export default vue
