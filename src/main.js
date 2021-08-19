@@ -2,7 +2,7 @@
  * @Description: 默认注释
  * @Author: huangxin
  * @Date: 2021-08-04 14:47:34
- * @LastEditTime: 2021-08-17 11:36:55
+ * @LastEditTime: 2021-08-19 16:45:05
  */
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
@@ -17,7 +17,11 @@ import '@/styles/index.scss' // global css
 import echarts from 'echarts'
 import axios from 'axios'
 
-
+const routerPush = router.prototype.routerPush
+router.prototype.push = function push(location) {
+	return routerPush.call(this, location).catch(error => error)
+}
+Vue.use(router)
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.use(echarts)
