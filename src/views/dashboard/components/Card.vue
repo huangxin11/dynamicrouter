@@ -2,7 +2,7 @@
  * @Description: 默认注释
  * @Author: huangxin
  * @Date: 2021-08-03 18:11:49
- * @LastEditTime: 2021-08-05 16:24:24
+ * @LastEditTime: 2021-08-17 14:00:34
 -->
 <template>
   <div class="app-container">
@@ -34,7 +34,7 @@
                   <span style="font-size:14px">总{{ item.title }}</span>
                 </el-col>
                 <el-col style="text-align: left;" :span="6" :push="5">
-                  <span style="font-size:14px">${{ item.total }}</span>
+                  <span style="font-size:14px">{{ item.total }}</span>
                 </el-col>
               </el-row>
             </div>

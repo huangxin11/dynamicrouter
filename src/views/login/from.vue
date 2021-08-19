@@ -92,10 +92,10 @@ export default {
               });
             } else {
               localStorage.setItem("user", JSON.stringify(data));
-              axios.interceptors.request.use(config => {
-                config.headers.Authorization = "Bearer " + data.token;
-                return config;
-              });
+              //   axios.interceptors.request.use(config => {
+              //     config.headers.Authorization = "Bearer " + data.token;
+              //     return config;
+              //   });
               this.$router.push({
                 path: "/dashboard/analysis",
                 query: { id: 1000 }

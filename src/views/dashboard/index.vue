@@ -2,7 +2,7 @@
  * @Description: 默认注释
  * @Author: huangxin
  * @Date: 2021-08-03 18:11:49
- * @LastEditTime: 2021-08-11 16:07:19
+ * @LastEditTime: 2021-08-17 11:25:34
 -->
 <template>
   <div class="app-container">
@@ -18,7 +18,6 @@
         <el-col v-else>
           <Cross
             :key="domKey"
-            v-show="item.row == 2"
             :height="item.row == 3 ? '300px' : '400px'"
             :crossData="item.children"
           ></Cross>

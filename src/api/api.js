@@ -2,7 +2,7 @@
  * @Description: 默认注释
  * @Author: huangxin
  * @Date: 2021-06-10 11:09:54
- * @LastEditTime: 2021-08-11 15:14:17
+ * @LastEditTime: 2021-08-17 11:37:48
  */
 import axios from 'axios';
 import { Message } from 'element-ui'
@@ -38,14 +38,6 @@ axios.interceptors.response.use(
 		}
 	}
 );
-let user = localStorage.getItem('user')
-if (user) {
-	user = JSON.parse(user)
-	axios.interceptors.request.use(config => {
-		config.headers.Authorization = "Bearer " + user.token;
-		return config;
-	});
-}
 export const requestLogin = params => { return axios.post(`${base}/login`, params).then(res => res.data) };
 export const getMenuList = params => { return axios.get(`${base}/menu/`, params).then(res => res.data) };
 export const getApiMenuId = params => { return axios.get(`${base}/api/${params}`).then(res => res.data) };

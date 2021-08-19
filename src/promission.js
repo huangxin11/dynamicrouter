@@ -114,32 +114,35 @@ router.beforeEach((to, from, next) => {
 			if (!getObjArr('router')) {
 				// easy-mock官网经常挂掉，所以就不请求了,你们可以替换成自己公司的接口去请求,把下方的axios请求打开即可
 				// axios.get('https://www.easy-mock.com/mock/5a5da330d9b48c260cb42ca8/example/antrouter').then(res => {
-				getMenuList({})
-					.then(res => {
-						let { code, data, message } = res
-						if (code !== 200) {
-							this.$message({
-								message: message,
-								type: "error",
-							});
-						} else {
-							data.filter(item => {
-								item.meta = {
-									'title': item.name,
-								}
-								item.children.filter(child => {
-									child.meta = {
-										"title": child.name
+				if (user) {
+					getMenuList({})
+						.then(res => {
+							let { code, data, message } = res
+							if (code !== 200) {
+								this.$message({
+									message: message,
+									type: "error",
+								});
+							} else {
+								data.filter(item => {
+									item.meta = {
+										'title': item.name,
 									}
+									item.children.filter(child => {
+										child.meta = {
+											"title": child.name
+										}
+									})
 								})
-							})
-							fakeRouter.router = data
-							getRouter = fakeRouter.router //假装模拟后台请求得到的路由数据
-							localStorage.setItem('router', JSON.stringify(getRouter))
-							//saveObjArr('router', getRouter) //存储路由到localStorage
-							routerGo(to, next) //执行路由跳转方法
-						}
-					})
+								fakeRouter.router = data
+								getRouter = fakeRouter.router //假装模拟后台请求得到的路由数据
+								localStorage.setItem('router', JSON.stringify(getRouter))
+								//saveObjArr('router', getRouter) //存储路由到localStorage
+								routerGo(to, next) //执行路由跳转方法
+							}
+						})
+				}
+
 				// })
 			} else { //从localStorage拿到了路由
 				//getRouter = getObjArr('router') //拿到路由
@@ -147,6 +150,8 @@ router.beforeEach((to, from, next) => {
 				//debugger
 				routerGo(to, next)
 			}
+
+
 		} else {
 			next()
 		}
