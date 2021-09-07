@@ -97,8 +97,8 @@ export default {
               //     return config;
               //   });
               this.$router.push({
-                path: "/dashboard/analysis",
-                query: { id: 1000 }
+                path: "/finance/canal",
+                query: { id: 2001 }
               });
             }
           });

@@ -2,11 +2,11 @@
  * @Description: 默认注释
  * @Author: huangxin
  * @Date: 2021-08-03 18:11:49
- * @LastEditTime: 2021-08-17 14:00:34
+ * @LastEditTime: 2021-09-07 10:28:19
 -->
 <template>
   <div class="app-container">
-    <el-row class="content-row" :gutter="20">
+    <el-row :gutter="20">
       <el-col :span="6" v-for="item in cardData" :key="item.icon">
         <div class="grid-content bg-purple">
           <el-card class="box-card">

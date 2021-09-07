@@ -9,93 +9,89 @@ var getRouter //用来获取后台拿到的路由
 
 // 假装fakeRouter是通过后台接口请求回来的数据
 let fakeRouter = {
-	//"router": [
-	// 	{
-	// 		"path": "",
-	// 		"component": "Layout",
-	// 		"redirect": "dashboard",
-	// 		"children": [{
-	// 			"path": "dashboard",
-	// 			"component": "dashboard/index",
-	// 			"meta": {
-	// 				"title": "首页",
-	// 				"icon": "dashboard"
-	// 			}
-	// 		}]
-	// 	},
-	// 	{
-	// 		"path": "/example",
-	// 		"component": "Layout",
-	// 		"redirect": "/example/table",
-	// 		"name": "Example",
+	// "router": [{
+	// 	"path": "",
+	// 	"component": "Layout",
+	// 	"redirect": "dashboard",
+	// 	"children": [{
+	// 		"path": "dashboard",
+	// 		"component": "dashboard/index",
 	// 		"meta": {
-	// 			"title": "案例",
-	// 			"icon": "example"
-	// 		},
-	// 		"children": [{
-	// 			"path": "table",
-	// 			"name": "Table",
-	// 			"component": "table/index",
-	// 			"meta": {
-	// 				"title": "表格",
-	// 				"icon": "table"
-	// 			}
-	// 		},
-	// 		{
-	// 			"path": "tree",
-	// 			"name": "Tree",
-	// 			"component": "tree/index",
-	// 			"meta": {
-	// 				"title": "树形菜单",
-	// 				"icon": "tree"
-	// 			}
+	// 			"title": "首页",
+	// 			"icon": "dashboard"
 	// 		}
-	// 		]
+	// 	}]
+	// },
+	// {
+	// 	"path": "/example",
+	// 	"component": "Layout",
+	// 	"redirect": "/example/table",
+	// 	"name": "Example",
+	// 	"meta": {
+	// 		"title": "案例",
+	// 		"icon": "example"
 	// 	},
-	// 	{
-	// 		"path": "/form",
-	// 		"component": "Layout",
-	// 		"children": [{
-	// 			"path": "index",
-	// 			"name": "Form",
-	// 			"component": "form/index",
-	// 			"meta": {
-	// 				"title": "表单",
-	// 				"icon": "form"
-	// 			}
-	// 		}]
-	// 	},
-	// 	{
-	// 		"name": "仪表盘",
-	// 		"path": "/dashboard",
-	// 		"component": "Layout",
-	// 		"id": 1,
-	// 		"children": [{
-	// 			"path": "analysis",
-	// 			"component": "dashboard/index",
-	// 			"parent_id": 1,
-	// 			"name": "图表分析",
-	// 			"id": 1000,
-	// 			"meta": {
-	// 				"title": "图表分析"
-	// 			}
-	// 		}, {
-	// 			"path": "workbench",
-	// 			"component": "dashboard/index",
-	// 			"parent_id": 1,
-	// 			"name": "工作台",
-	// 			"id": 2000,
-	// 			"meta": {
-	// 				"title": "工作台"
-	// 			}
-	// 		}],
-	// 		"parent_id": 0,
+	// 	"children": [{
+	// 		"path": "table",
+	// 		"name": "Table",
+	// 		"component": "table/index",
 	// 		"meta": {
-	// 			"title": "仪表盘"
+	// 			"title": "表格",
+	// 			"icon": "table"
+	// 		}
+	// 	},
+	// 	{
+	// 		"path": "tree",
+	// 		"name": "Tree",
+	// 		"component": "tree/index",
+	// 		"meta": {
+	// 			"title": "树形菜单",
+	// 			"icon": "tree"
 	// 		}
 	// 	}
+	// 	]
+	// },
+	// {
+	// 	"path": "/form",
+	// 	"component": "Layout",
+	// 	"children": [{
+	// 		"path": "index",
+	// 		"name": "Form",
+	// 		"component": "form/index",
+	// 		"meta": {
+	// 			"title": "表单",
+	// 			"icon": "form"
+	// 		}
+	// 	}]
+	// },
+	// {
+	// 	"name": "仪表盘",
+	// 	"path": "dashboard",
+	// 	"id": 1,
+	// 	"children": [{
+	// 		"path": "analysis",
+	// 		"parent_id": 1,
+	// 		"name": "图表分析",
+	// 		"id": 1000,
+	// 		"component": "dashboard/index"
+	// 	},
+	// 	{
+	// 		"path": "workbench",
+	// 		"parent_id": 1,
+	// 		"name": "工作台",
+	// 		"id": 2000,
+	// 		"component": "dashboard/index"
+	// 	}],
+	// 	"parent_id": 0,
+	// 	"component": "Layout",
+	// 	"redirect": "dashboard"
+	// },
+	// {
+	// 	"path": "*",
+	// 	"redirect": "/404",
+	// 	"hidden": true
+	// }
 	// ]
-
 
 }
 router.beforeEach((to, from, next) => {

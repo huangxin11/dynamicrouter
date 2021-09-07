@@ -2,7 +2,7 @@
  * @Description: 默认注释
  * @Author: huangxin
  * @Date: 2021-08-04 14:47:34
- * @LastEditTime: 2021-08-05 15:42:22
+ * @LastEditTime: 2021-09-06 18:19:05
 -->
 <template>
   <div class="menu-wrapper">
@@ -77,4 +77,5 @@ export default {
   mounted() {}
 };
 </script>
-<style></style>
+<style>
+</style>

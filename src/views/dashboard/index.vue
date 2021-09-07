@@ -2,11 +2,11 @@
  * @Description: 默认注释
  * @Author: huangxin
  * @Date: 2021-08-03 18:11:49
- * @LastEditTime: 2021-08-17 11:25:34
+ * @LastEditTime: 2021-09-07 11:20:39
 -->
 <template>
   <div class="app-container">
-    <el-row>
+    <el-row class="content-row">
       <el-col
         v-for="item in menuIdList"
         :key="item.id"
@@ -71,7 +71,8 @@ export default {
           data.forEach(item => {
             let params = {
               api_url: item.api_url,
-              method: item.method
+              method: item.method,
+              params: {}
             };
             getCharData(params).then(response => {
               let { code, data, message } = response;
@@ -92,6 +93,9 @@ export default {
         }
       });
     }
+  },
+  toDetailsFigure: function(item) {
+    debugger;
   }
 };
 </script>
