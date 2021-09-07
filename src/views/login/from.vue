@@ -50,7 +50,7 @@ export default {
     return {
       logining: false,
       ruleForm2: {
-        account: "admin",
+        account: "",
         checkPass: ""
       },
       rules2: {
