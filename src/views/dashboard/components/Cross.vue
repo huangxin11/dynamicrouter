@@ -2,7 +2,7 @@
  * @Description: 默认注释
  * @Author: huangxin
  * @Date: 2021-08-05 10:27:53
- * @LastEditTime: 2021-09-08 11:07:53
+ * @LastEditTime: 2021-09-08 17:06:01
 -->
 <template>
   <!-- <div></div> -->
@@ -16,9 +16,13 @@ export default {
       type: Object,
       default: () => {}
     },
+    params: {
+      type: Object,
+      default: () => {}
+    },
     height: {
       type: String,
-      default: "400px"
+      default: "600px"
     }
   },
   data() {
@@ -33,13 +37,20 @@ export default {
   },
   methods: {
     drawLine() {
+      let _this = this;
       // 基于准备好的dom，初始化echarts实例
       let myChart = this.$echarts.init(this.$refs.pieDom);
       // 绘制图表
       myChart.setOption(this.crossData);
-      myChart.on("click", function(params) {
-        debugger;
-      });
+      if (this.params) {
+        myChart.on("click", function() {
+          localStorage.setItem("crossParams", JSON.stringify(_this.params));
+          _this.$router.push({
+            name: "analysis",
+            params: { params: _this.params }
+          });
+        });
+      }
     }
   }
 };

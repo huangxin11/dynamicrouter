@@ -2,7 +2,7 @@
  * @Description: 默认注释
  * @Author: huangxin
  * @Date: 2021-08-03 18:11:49
- * @LastEditTime: 2021-09-07 18:16:15
+ * @LastEditTime: 2021-09-08 15:58:18
 -->
 <template>
   <div class="app-container">
@@ -17,11 +17,23 @@
           <Card :key="domKey" :cardData="item.children"></Card>
         </el-col>
         <el-col v-else>
-          <Cross
-            :key="domKey"
-            :height="item.row == 3 ? '300px' : '400px'"
-            :crossData="item.children"
-          ></Cross>
+			<el-col v-if="item.row == 2" style="margin:40px auto 100px auto">
+  				<Cross
+					:key="domKey"
+					:height="item.row == 3 ? '300px' : '400px'"
+					:crossData="item.children"
+					:params="item"
+				></Cross>
+			</el-col>
+			<el-col v-else>
+				<Cross
+					:key="domKey"
+					:height="item.row == 3 ? '300px' : '400px'"
+					:crossData="item.children"
+					:params="item"
+				></Cross>
+			</el-col>
+        
         </el-col>
       </el-col>
     </el-row>
