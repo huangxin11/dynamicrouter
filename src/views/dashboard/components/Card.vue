@@ -2,12 +2,12 @@
  * @Description: 默认注释
  * @Author: huangxin
  * @Date: 2021-08-03 18:11:49
- * @LastEditTime: 2021-09-07 10:28:19
+ * @LastEditTime: 2021-09-07 17:02:42
 -->
 <template>
   <div class="app-container">
     <el-row :gutter="20">
-      <el-col :span="6" v-for="item in cardData" :key="item.icon">
+      <el-col :span="4" v-for="item in cardData" :key="item.icon">
         <div class="grid-content bg-purple">
           <el-card class="box-card">
             <div slot="header" class="clearfix">
@@ -56,7 +56,42 @@ export default {
   },
   filters: {},
   created() {},
-  mounted() {}
+  mounted() {
+    this.cardData = [
+      {
+        title: "访问数",
+        icon: "visit-count|svg",
+        value: 2000,
+        total: 120000,
+        color: "green",
+        action: "月"
+      },
+      {
+        title: "成交额",
+        icon: "total-sales|svg",
+        value: 20000,
+        total: 500000,
+        color: "blue",
+        action: "月"
+      },
+      {
+        title: "下载数",
+        icon: "download-count|svg",
+        value: 8000,
+        total: 120000,
+        color: "orange",
+        action: "周"
+      },
+      {
+        title: "成交数",
+        icon: "transaction|svg",
+        value: 5000,
+        total: 50000,
+        color: "purple",
+        action: "年"
+      }
+    ];
+  }
 };
 </script>
 <style scoped>

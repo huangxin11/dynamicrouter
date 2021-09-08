@@ -2,7 +2,7 @@
  * @Description: 默认注释
  * @Author: huangxin
  * @Date: 2021-08-04 14:47:34
- * @LastEditTime: 2021-08-06 10:27:11
+ * @LastEditTime: 2021-09-08 10:03:03
  */
 import Vue from 'vue'
 import Router from 'vue-router'
@@ -18,7 +18,7 @@ export const defaultRoutMap = [
 	},
 	{
 		path: '/',
-		redirect: '/dashboard/analysis?id=1000'
+		redirect: '/finance/canal?id=2001'
 	}
 
 	//   { path: '*', redirect: '/404', hidden: true }

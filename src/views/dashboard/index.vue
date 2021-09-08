@@ -2,10 +2,11 @@
  * @Description: 默认注释
  * @Author: huangxin
  * @Date: 2021-08-03 18:11:49
- * @LastEditTime: 2021-09-07 11:20:39
+ * @LastEditTime: 2021-09-07 18:16:15
 -->
 <template>
   <div class="app-container">
+	  <!-- <Card :key="domKey"></Card> -->
     <el-row class="content-row">
       <el-col
         v-for="item in menuIdList"
@@ -93,9 +94,6 @@ export default {
         }
       });
     }
-  },
-  toDetailsFigure: function(item) {
-    debugger;
   }
 };
 </script>

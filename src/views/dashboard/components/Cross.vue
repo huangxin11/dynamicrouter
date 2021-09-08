@@ -2,7 +2,7 @@
  * @Description: 默认注释
  * @Author: huangxin
  * @Date: 2021-08-05 10:27:53
- * @LastEditTime: 2021-09-07 15:07:51
+ * @LastEditTime: 2021-09-08 11:07:53
 -->
 <template>
   <!-- <div></div> -->
@@ -27,16 +27,19 @@ export default {
     };
   },
   mounted() {
-    this.drawLine();
+    if (this.crossData) {
+      this.drawLine();
+    }
   },
   methods: {
     drawLine() {
-      if (this.crossData) {
-        // 基于准备好的dom，初始化echarts实例
-        let myChart = this.$echarts.init(this.$refs.pieDom);
-        // 绘制图表
-        myChart.setOption(this.crossData);
-      }
+      // 基于准备好的dom，初始化echarts实例
+      let myChart = this.$echarts.init(this.$refs.pieDom);
+      // 绘制图表
+      myChart.setOption(this.crossData);
+      myChart.on("click", function(params) {
+        debugger;
+      });
     }
   }
 };

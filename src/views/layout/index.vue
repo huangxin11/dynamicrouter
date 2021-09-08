@@ -124,7 +124,7 @@ export default {
       }
     }
     .logo-width {
-      width: 180px;
+      width: 182px;
     }
   }
 }
