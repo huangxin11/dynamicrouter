@@ -2,7 +2,7 @@
  * @Description: 默认注释
  * @Author: huangxin
  * @Date: 2021-08-03 18:11:49
- * @LastEditTime: 2021-09-13 16:30:19
+ * @LastEditTime: 2021-09-13 16:31:25
 -->
 <template>
   <div class="app-container">
@@ -21,22 +21,22 @@
             <div class="text item">
               <el-row :gutter="20">
                 <el-col style="text-align: left;" :span="12">
-                  <span style="font-size:24px">${{ item.value }}</span>
+                  <span style="font-size:24px">{{ item.value }}</span>
                 </el-col>
-                <el-col style="text-align: center;" :span="6" :push="5">
+                <!-- <el-col style="text-align: center;" :span="6" :push="5">
                   <span class="icon">
                     <i class="el-icon-set-up"></i>
                   </span>
-                </el-col>
+                </el-col> -->
               </el-row>
-              <el-row style="margin-top:30px" :gutter="20">
+              <!-- <el-row style="margin-top:30px" :gutter="20">
                 <el-col style="text-align: left;" :span="12">
                   <span style="font-size:14px">{{ item.title }}</span>
                 </el-col>
                 <el-col style="text-align: right;padding-right:0" :span="8" :push="4">
                   <span style="font-size:14px">{{ item.total }}</span>
                 </el-col>
-              </el-row>
+              </el-row> -->
             </div>
           </el-card>
         </div>
