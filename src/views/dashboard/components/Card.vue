@@ -2,7 +2,7 @@
  * @Description: 默认注释
  * @Author: huangxin
  * @Date: 2021-08-03 18:11:49
- * @LastEditTime: 2021-09-13 16:31:25
+ * @LastEditTime: 2021-09-13 16:38:36
 -->
 <template>
   <div class="app-container">
@@ -11,10 +11,10 @@
         <div class="grid-content bg-purple">
           <el-card class="box-card">
             <div slot="header" class="clearfix">
-              <el-col style="text-align: left;" :span="12">
+              <el-col style="text-align: left;" :span="15">
                 <span>{{ item.title }}</span>
               </el-col>
-              <el-col style="text-align: center;" :span="6" :push="6">
+              <el-col style="text-align: right;" :span="6" :push="3">
                 <span class="header-label">{{ item.action }}</span>
               </el-col>
             </div>
